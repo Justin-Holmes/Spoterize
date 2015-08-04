@@ -4,6 +4,7 @@
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
 
+
 html,
 body {
     width: 100%;
@@ -473,4 +474,13 @@ img::-moz-selection {
 
 body {
     webkit-tap-highlight-color: #222;
+}
+
+.form-control {
+  margin: auto;
+  width: 50%;
+}
+
+#pandora {
+  background-image: url(pandora2.jpg);
 }

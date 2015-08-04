@@ -5,6 +5,8 @@
  */
 
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
+
+
 html {
   font-family: sans-serif;
   -webkit-text-size-adjust: 100%;
@@ -2528,8 +2530,9 @@ output {
   color: #555;
 }
 .form-control {
+  margin: auto;
   display: block;
-  width: 100%;
+  width: 50%;
   height: 34px;
   padding: 6px 12px;
   font-size: 14px;
@@ -6563,4 +6566,5 @@ button.close {
     display: none !important;
   }
 }
+
 /*# sourceMappingURL=bootstrap.css.map */
