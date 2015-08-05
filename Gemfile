@@ -12,6 +12,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'twitter-bootstrap-rails'
 gem 'font-awesome-rails'
 gem 'omniauth-spotify'
+gem 'pandata'
 
 group :development, :test do
   gem 'byebug'

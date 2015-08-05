@@ -1,0 +1,20 @@
+<header id="pandora">
+  <div class="header-content">
+    <div class="header-content-inner text-center">
+      <h1>Hello, <%= current_user.nickname %>!</h1>
+      <hr>
+      <h1 style="font-size: 50px;">Enter a Pandora Email</h1>
+      <br>
+      <br>
+      <br>
+      <div class="form-group">
+        <%= form_tag new_playlist_path, :method => :get do %>
+          <%= label_tag "Make sure the Pandora account is made public before entering the email." %>
+          <%= text_field_tag :email, "pandora@email.com", class: 'form-control' %>
+          <br>
+          <%= submit_tag "Submit", { style: "background-color: #005483", class: "btn btn-primary btn-xl" } %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</header>

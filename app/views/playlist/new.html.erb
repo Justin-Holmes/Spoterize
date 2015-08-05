@@ -1,0 +1,42 @@
+<header id="spotify">
+  <div class="header-content">
+    <div class="header-content-inner text-center">
+      <h1><%= current_user.nickname %></h1>
+      <hr>
+      <h1 style="font-size: 50px;">Name Your Playlist</h1>
+      <br>
+      <br>
+      <br>
+      <div class="form-group">
+        <%= form_tag new_playlist_path, :method => :get do %>
+          <%= label_tag "Playlist Name" %>
+          <%= text_field_tag :playlist_name, "My Playlist", class: 'form-control' %>
+          <br>
+          <%= submit_tag "Create Playlist", { class: "btn btn-primary btn-xl" } %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</header>
+<body id="spotify-body">
+  <h1 style="text-align: center">All Liked Tracks</h1>
+  <br>
+  <table class="table table-striped" id="playlist">
+    <thead>
+    <tr>
+      <th>#</th>
+      <th>Artist</th>
+      <th>Track</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @likes.each_with_index do |like, index| %>
+      <tr>
+        <td><%= index + 1 %></td>
+        <td><%= like[:artist] %></td>
+        <td><%= like[:track] %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+</body>

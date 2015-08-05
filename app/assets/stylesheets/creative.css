@@ -484,3 +484,12 @@ body {
 #pandora {
   background-image: url(pandora2.jpg);
 }
+
+#spotify {
+  background-image: url(spotify2.jpg);
+}
+
+#playlist {
+  width: 70%;
+  margin: auto;
+}

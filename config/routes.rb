@@ -3,5 +3,7 @@ Rails.application.routes.draw do
 
   get '/auth/spotify', as: :login
   get '/auth/spotify/callback', to: 'sessions#create'
-  get '/email', to: 'welcome#email'
+  get '/pandora', to: 'pandora#index'
+
+  resources :playlist, only: [:new]
 end
