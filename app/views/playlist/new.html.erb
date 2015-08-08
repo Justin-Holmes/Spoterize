@@ -8,7 +8,7 @@
       <br>
       <br>
       <div class="form-group">
-        <%= form_tag new_playlist_path, :method => :get do %>
+        <%= form_tag playlist_index_path, :method => :post do %>
           <%= label_tag "Playlist Name" %>
           <%= text_field_tag :playlist_name, "My Playlist", class: 'form-control' %>
           <br>

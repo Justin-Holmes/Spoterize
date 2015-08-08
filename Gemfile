@@ -13,6 +13,7 @@ gem 'twitter-bootstrap-rails'
 gem 'font-awesome-rails'
 gem 'omniauth-spotify'
 gem 'pandata'
+gem 'rspotify'
 
 group :development, :test do
   gem 'byebug'
