@@ -11,4 +11,8 @@ class User < ActiveRecord::Base
         })
     end
   end
+
+  def rspotify_user(auth_info)
+    RSpotify::User.new(auth_info)
+  end
 end
