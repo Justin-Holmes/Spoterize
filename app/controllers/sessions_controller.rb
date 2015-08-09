@@ -1,6 +1,7 @@
 class SessionsController < ApplicationController
   def create
     @user = User.find_or_create_from_oauth(oauth)
+    session[:oauth] = oauth
 
     if @user
       session[:user_id] = @user.id
