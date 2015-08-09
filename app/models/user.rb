@@ -12,7 +12,21 @@ class User < ActiveRecord::Base
     end
   end
 
+  def create_spotify_playlist(params, session)
+    spotify_user = rspotify_user(session[:oauth])
+    SpotifyPlaylistCreator.new(spotify_user, params, likes).create_playlist
+  end
+
   def rspotify_user(auth_info)
     RSpotify::User.new(auth_info)
+  end
+
+  def set_pandora_user(params)
+    pandora_user  = Pandata::Scraper.get(params[:email])
+    @@likes       = pandora_user.likes(:tracks)
+  end
+
+  def likes
+    @@likes
   end
 end
