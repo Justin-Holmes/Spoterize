@@ -493,3 +493,13 @@ body {
   width: 70%;
   margin: auto;
 }
+
+#spotify-body {
+  color: white;
+  background-color: #191919;
+}
+
+#pleaseWaitDialog {
+  padding-top: 10%;
+  text-align: center;
+}
