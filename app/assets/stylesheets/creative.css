@@ -476,11 +476,6 @@ body {
     webkit-tap-highlight-color: #222;
 }
 
-.form-control {
-  margin: auto;
-  width: 50%;
-}
-
 #pandora {
   background-image: url(pandora2.jpg);
 }
@@ -500,6 +495,11 @@ body {
 }
 
 #pleaseWaitDialog {
-  padding-top: 10%;
+  padding-top: 12%;
   text-align: center;
+}
+
+.form-control {
+  margin: auto;
+  width: 50%;
 }

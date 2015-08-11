@@ -11,7 +11,7 @@
     <br>
     <div class="form-group">
       <%= form_tag playlist_index_path, :method => :post do %>
-        <%= text_field_tag :playlist_name, "Pandora Songs", class: 'form-control' %>
+        <%= text_field_tag :playlist_name, "Pandora Songs", { style: "width: 30%", class: 'form-control spotify-form' }%>
         <br>
         <%= submit_tag "Create Playlist", { style: "background-color: #81b71a", class: "btn btn-primary btn-xl" } %>
       <% end %>
