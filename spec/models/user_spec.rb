@@ -42,7 +42,7 @@ RSpec.describe User, type: :model do
     expect(u.uid).to_not eq(user.uid)
   end
 
-  xit 'returns a pandora user' do
+  it 'returns a pandora user' do
     good_email = { email: 'Justin12@gmail.com' }
     bad_email = { email: '98a8df9a8sdf98asdf@adf.com' }
 

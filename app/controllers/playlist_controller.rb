@@ -1,6 +1,6 @@
 class PlaylistController < ApplicationController
   def new
-    if Pandata::Scraper.get(params[:email]).class == Pandata::Scraper
+    if current_user.pandora_user(params).class == Pandata::Scraper
       current_user.get_pandora_songs(params)
       @likes = current_user.likes
     else
