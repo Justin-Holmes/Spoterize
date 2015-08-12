@@ -503,3 +503,8 @@ body {
   margin: auto;
   width: 50%;
 }
+
+.alert-danger {
+  text-align: center;
+  margin: 0;
+}

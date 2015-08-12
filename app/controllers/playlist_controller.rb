@@ -5,7 +5,7 @@ class PlaylistController < ApplicationController
       @likes = current_user.likes
     else
       flash[:danger] = "Please enter a valid Pandora email or make sure the profile is set to public"
-      render :'pandora/index'
+      redirect_to pandora_path
     end
   end
 
