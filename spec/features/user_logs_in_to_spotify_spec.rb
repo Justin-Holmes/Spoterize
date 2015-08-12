@@ -1,13 +1,13 @@
 require 'rails_helper'
 
-describe 'user can log out', type: :feature do
+describe 'user can log in', type: :feature do
   include Capybara::DSL
 
   let(:user) { User.create(uid: '123456', nickname: 'Jdog', token: '1111') }
 
   before(:each) do
     Capybara.app = Spoterize::Application
-    stub_omniauth
+    stub_omniauth_user
     user
   end
 
