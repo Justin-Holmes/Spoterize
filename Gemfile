@@ -13,6 +13,7 @@ gem 'font-awesome-rails'
 gem 'omniauth-spotify'
 gem 'pandata'
 gem 'rspotify'
+gem 'skylight', '0.7.1'
 
 group :development, :test do
   gem 'byebug'
