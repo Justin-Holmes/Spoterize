@@ -21,9 +21,9 @@ class SpotifyPlaylistCreator
   end
 
   def find_track(song)
-    RSpotify::Track.search(song[:track]).find do |track|
+    RSpotify::Track.search(song["track"]).find do |track|
       track.artists.find do |track_artist|
-        track_artist.name == song[:artist]
+        track_artist.name == song["artist"]
       end
     end
   end

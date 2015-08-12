@@ -21,12 +21,12 @@ class User < ActiveRecord::Base
     RSpotify::User.new(auth_info)
   end
 
-  def set_pandora_user(params)
+  def get_pandora_songs(params)
     pandora_user  = Pandata::Scraper.get(params[:email])
-    @@likes       = pandora_user.likes(:tracks)
+    Rails.cache.write("user:#{id}:working_playlist", pandora_user.likes(:tracks).to_json)
   end
 
   def likes
-    @@likes
+    JSON.parse(Rails.cache.read("user:#{id}:working_playlist"))
   end
 end

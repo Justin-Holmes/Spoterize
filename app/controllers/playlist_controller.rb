@@ -1,7 +1,12 @@
 class PlaylistController < ApplicationController
   def new
-    current_user.set_pandora_user(params)
-    @likes = current_user.likes
+    if Pandata::Scraper.get(params[:email]).class == Pandata::Scraper
+      current_user.get_pandora_songs(params)
+      @likes = current_user.likes
+    else
+      flash[:danger] = "Please enter a valid Pandora email or make sure the profile is set to public"
+      render :'pandora/index'
+    end
   end
 
   def create

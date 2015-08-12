@@ -16,11 +16,25 @@ RSpec.configure do |config|
   config.infer_spec_type_from_file_location!
 end
 
-def stub_omniauth
+def stub_omniauth_user
   OmniAuth.config.test_mode = true
   OmniAuth.config.mock_auth[:spotify] = OmniAuth::AuthHash.new({
       provider: 'spotify',
       uid: '123456',
+      info: {
+        nickname: 'Jdog'
+      },
+      credentials: {
+        token: '1111'
+      }
+    })
+end
+
+def stub_omniauth_new_user
+  OmniAuth.config.test_mode = true
+  OmniAuth.config.mock_auth[:spotify] = OmniAuth::AuthHash.new({
+      provider: 'spotify',
+      uid: '9999',
       info: {
         nickname: 'Jdog'
       },

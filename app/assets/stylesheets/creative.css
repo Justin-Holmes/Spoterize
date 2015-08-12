@@ -476,11 +476,6 @@ body {
     webkit-tap-highlight-color: #222;
 }
 
-.form-control {
-  margin: auto;
-  width: 50%;
-}
-
 #pandora {
   background-image: url(pandora2.jpg);
 }
@@ -492,4 +487,19 @@ body {
 #playlist {
   width: 70%;
   margin: auto;
+}
+
+#spotify-body {
+  color: white;
+  background-color: #191919;
+}
+
+#pleaseWaitDialog {
+  padding-top: 12%;
+  text-align: center;
+}
+
+.form-control {
+  margin: auto;
+  width: 50%;
 }

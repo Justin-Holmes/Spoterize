@@ -2,8 +2,8 @@
 <html>
 <head>
   <title>Spoterize</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,25 +11,31 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <link rel="stylesheet" href="bootstrap.min.css" type="text/css">
+  <link rel="stylesheet" href="assets/bootstrap.min.css" type="text/css">
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="font-awesome.min.css" type="text/css">
-  <link rel="stylesheet" href="animate.min.css" type="text/css">
-  <link rel="stylesheet" href="creative.css" type="text/css">
+  <link rel="stylesheet" href="assets/font-awesome.min.css" type="text/css">
+  <!--<link rel="stylesheet" href="animate.min.css" type="text/css">-->
+  <link rel="stylesheet" href="assets/creative.css" type="text/css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>
   <![endif]-->
+  <% flash.each do |name, msg| %>
+    <% if msg.is_a?(String) %>
+      <div class="alert alert-<%= name.to_s %>" role="alert">
+        <%= content_tag :div, msg %>
+      </div>
+    <% end %>
+  <% end %>
 </head>
 <body>
 
 <%= yield %>
 
-<script src="jquery.js"></script>
-<script src="bootstrap.min.js"></script>
+<script src="assets/jquery.js"></script>
+<script src="assets/bootstrap.min.js"></script>
 
 </body>
 </html>
