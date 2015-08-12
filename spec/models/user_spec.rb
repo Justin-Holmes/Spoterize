@@ -49,4 +49,19 @@ RSpec.describe User, type: :model do
     expect(user.pandora_user(good_email).class).to eq(Pandata::Scraper)
     expect(user.pandora_user(bad_email).class).to eq(Array)
   end
+
+  it 'returns likes for a pandora user' do
+    params = { email: 'jorge.pandora123@gmail.com' }
+    count = user.likes_for_pandora_user(params).count
+
+    expect(count).to eq(4)
+  end
+
+  it 'can read and write to Rails cache' do
+    params = { email: 'jorge.pandora123@gmail.com' }
+    user.get_pandora_songs(params)
+
+    expect(user.get_pandora_songs(params)).to eq(true)
+    expect(user.likes.count).to eq(4)
+  end
 end

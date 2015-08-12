@@ -15,8 +15,8 @@ describe 'user can log in', type: :feature do
     visit root_path
     assert_equal 200, page.status_code
     click_on "Login to Spotify"
+
     assert_equal '/pandora', current_path
-    assert page.has_content?("Jdog")
     assert page.has_content?("Enter a Pandora Email")
   end
 end

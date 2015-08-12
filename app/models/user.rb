@@ -24,8 +24,12 @@ class User < ActiveRecord::Base
     Pandata::Scraper.get(params[:email])
   end
 
+  def likes_for_pandora_user(params)
+    pandora_user(params).likes(:tracks)
+  end
+
   def get_pandora_songs(params)
-    Rails.cache.write("user:#{id}:working_playlist", pandora_user(params).likes(:tracks).to_json)
+    Rails.cache.write("user:#{id}:working_playlist", likes_for_pandora_user(params).to_json)
   end
 
   def likes
