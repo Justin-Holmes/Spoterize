@@ -22,15 +22,10 @@
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>
   <![endif]-->
-  <% flash.each do |name, msg| %>
-    <% if msg.is_a?(String) %>
-      <div class="alert alert-<%= name.to_s %>" role="alert">
-        <%= content_tag :div, msg %>
-      </div>
-    <% end %>
-  <% end %>
+
 </head>
 <body>
+<%= render 'layouts/messages' %>
 
 <%= yield %>
 
