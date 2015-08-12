@@ -5,9 +5,8 @@ class User < ActiveRecord::Base
     if user = find_by(uid: auth_info.uid)
       user
     else
-      create({ nickname:       auth_info.info.nickname,
-               uid:            auth_info.uid,
-               token:          auth_info.credentials.token
+      create({  uid:            auth_info.uid,
+                token:          auth_info.credentials.token
         })
     end
   end
