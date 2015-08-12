@@ -23,7 +23,7 @@ class SpotifyPlaylistCreator
   def find_track(song)
     RSpotify::Track.search(song["track"]).find do |track|
       track.artists.find do |track_artist|
-        track_artist.name == song["artist"]
+        track_artist.name.downcase.include?(song["artist"].downcase)
       end
     end
   end
