@@ -16,6 +16,7 @@ gem 'rspotify'
 gem 'skylight', '0.7.1'
 gem 'resque', '~> 1.22.0'
 gem 'dalli'
+gem 'memcachier'
 
 
 group :development, :test do
