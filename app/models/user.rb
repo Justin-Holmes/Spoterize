@@ -11,8 +11,8 @@ class User < ActiveRecord::Base
     end
   end
 
-  def create_spotify_playlist(params, session)
-    SpotifyPlaylistCreator.new(rspotify_user(session[:oauth]), params, likes).create_playlist
+  def create_spotify_playlist(playlist_name, auth_info)
+    SpotifyPlaylistCreator.new(rspotify_user(auth_info), playlist_name, likes).create_playlist
   end
 
   def rspotify_user(auth_info)
