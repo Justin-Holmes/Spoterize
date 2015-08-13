@@ -10,7 +10,10 @@ class PlaylistController < ApplicationController
   end
 
   def create
-    current_user.create_spotify_playlist(params, session)
-    redirect_to root_path
+    Resque.enqueue(CreateSpotifyPlaylistJob, current_user.id, params[:playlist_name], session[:oauth])
+    redirect_to playlist_completed_path
+  end
+
+  def completed
   end
 end

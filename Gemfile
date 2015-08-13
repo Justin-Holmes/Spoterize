@@ -14,6 +14,8 @@ gem 'omniauth-spotify'
 gem 'pandata'
 gem 'rspotify'
 gem 'skylight', '0.7.1'
+gem 'resque'
+
 
 group :development, :test do
   gem 'byebug'

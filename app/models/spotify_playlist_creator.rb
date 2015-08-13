@@ -3,9 +3,9 @@ class SpotifyPlaylistCreator
               :playlist_name,
               :likes
 
-  def initialize(user, params, likes)
+  def initialize(user, playlist_name, likes)
     @user           = user
-    @playlist_name  = params[:playlist_name]
+    @playlist_name  = playlist_name
     @likes          = likes
   end
 

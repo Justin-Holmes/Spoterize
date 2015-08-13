@@ -1,0 +1,33 @@
+<header id="pandora">
+  <script src="assets/loading.js"></script>
+  <div class="header-content">
+    <div class="header-content-inner text-center">
+
+      <div class="modal fade" id="pleaseWaitDialog" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">Fetching Pandora songs... This may take a while</div>
+            <div class="modal-body">
+              <i class="fa fa-spinner fa-pulse"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h1>Hello, <%= current_user.uid %>!</h1>
+      <hr>
+      <h1 style="font-size: 50px;">Enter a Pandora Email</h1>
+      <br>
+      <br>
+      <br>
+      <div class="form-group">
+        <%= form_tag new_playlist_path, :method => :get do %>
+          <%= label_tag "Make sure the Pandora account is made public before entering the email." %>
+          <%= text_field_tag :email, "pandora@email.com", class: 'form-control' %>
+          <br>
+          <%= submit_tag "Submit", { style: "background-color: #005483", class: "btn btn-primary btn-xl", id: "pandora-button" } %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</header>
