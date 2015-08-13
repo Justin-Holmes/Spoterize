@@ -51,7 +51,7 @@ RSpec.describe User, type: :model do
     params = { email: 'jorge.pandora123@gmail.com' }
     count = user.likes_for_pandora_user(params).count
 
-    expect(count).to eq(4)
+    expect(count).to eq(7)
   end
 
   it 'can read and write to Rails cache' do
@@ -59,6 +59,6 @@ RSpec.describe User, type: :model do
     user.get_pandora_songs(params)
 
     expect(user.get_pandora_songs(params)).to eq(true)
-    expect(user.likes.count).to eq(4)
+    expect(user.likes.count).to eq(7)
   end
 end
