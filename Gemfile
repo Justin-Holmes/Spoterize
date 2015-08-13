@@ -14,7 +14,7 @@ gem 'omniauth-spotify'
 gem 'pandata'
 gem 'rspotify'
 gem 'skylight', '0.7.1'
-gem 'resque'
+gem 'resque', '~> 1.22.0'
 
 
 group :development, :test do
