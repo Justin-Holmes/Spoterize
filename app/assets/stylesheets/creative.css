@@ -557,4 +557,8 @@ tr.like:hover .delete-song {
   border-radius:0px
 }
 
+#playlistNav {
+  background-color: #333333;
+}
+
 
