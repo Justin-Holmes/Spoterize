@@ -1,3 +1,5 @@
+<%= render 'layouts/navbar' %>
+
 <body id="spotify-body">
 <div class="header-content">
   <div class="header-content-inner text-center">
@@ -19,23 +21,7 @@
 <br>
 <br>
   <h1 style="text-align: center">All Liked Tracks</h1>
+  <p style="text-align: center">Total Tracks: <%= @likes.count %></p>
   <br>
-  <table class="table table-bordered table-hover table-curved" id="playlist" style="background-color: #d3d3d3; color: black">
-    <thead>
-    <tr style="background-color: darkgray">
-      <th>#</th>
-      <th>Artist</th>
-      <th>Track</th>
-    </tr>
-    </thead>
-    <tbody>
-    <% @likes.each_with_index do |like, index| %>
-      <tr class="like" data-index="<%= index %>">
-        <td><%= index + 1 %></td>
-        <td><%= like["artist"] %></td>
-        <td class="like-track"><%= like["track"] %></td>
-      </tr>
-    <% end %>
-    </tbody>
-  </table>
+  <%= render 'layouts/tracks_table' %>
 </body>

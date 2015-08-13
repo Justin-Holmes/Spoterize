@@ -1,0 +1,16 @@
+<table class="table table-bordered table-hover table-curved" id="playlist" style="background-color: #d3d3d3; color: black">
+  <thead>
+  <tr style="background-color: darkgray">
+    <th>Artist</th>
+    <th>Track</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @likes.each_with_index do |like, index| %>
+    <tr class="like" data-index="<%= index %>">
+      <td><%= like["artist"] %></td>
+      <td class="like-track"><%= like["track"] %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>

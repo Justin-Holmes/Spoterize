@@ -10,8 +10,12 @@ class PlaylistController < ApplicationController
   end
 
   def create
-    Resque.enqueue(CreateSpotifyPlaylistJob, current_user.id, params[:playlist_name], session[:oauth])
-    redirect_to playlist_completed_path
+    if Resque.enqueue(CreateSpotifyPlaylistJob, current_user.id, params[:playlist_name], session[:oauth])
+      redirect_to playlist_completed_path
+    else
+      flash[:danger] = "Something went wrong. Please check the name of the playlist or try again."
+      render :create
+    end
   end
 
   def completed

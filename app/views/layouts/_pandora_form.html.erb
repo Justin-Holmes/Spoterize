@@ -1,0 +1,8 @@
+<div class="form-group">
+  <%= form_tag new_playlist_path, :method => :get do %>
+    <%= label_tag "Make sure the Pandora account is made public before entering the email." %>
+    <%= text_field_tag :email, "pandora@email.com", class: 'form-control' %>
+    <br>
+    <%= submit_tag "Submit", { style: "background-color: #005483", class: "btn btn-primary btn-xl", id: "pandora-button" } %>
+  <% end %>
+</div>
