@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  let(:user) { User.create(uid: '123456', nickname: 'Jdog', token: '1111') }
+  let(:user) { User.create(uid: '123456', token: '1111') }
 
   before(:each) do
     user
@@ -20,7 +20,6 @@ RSpec.describe User, type: :model do
     u = User.find_or_create_from_oauth(stub_omniauth_user)
 
     expect(u.uid).to eq(user.uid)
-    expect(u.nickname).to eq(user.nickname)
     expect(u.token).to eq(user.token)
   end
 
@@ -28,7 +27,6 @@ RSpec.describe User, type: :model do
     u = User.find_or_create_from_oauth(stub_omniauth_new_user)
 
     expect(u.uid).to eq('9999')
-    expect(u.nickname).to eq('Jdog')
     expect(u.token).to eq('1111')
     expect(u.uid).to_not eq(user.uid)
   end
@@ -37,7 +35,6 @@ RSpec.describe User, type: :model do
     u = User.find_or_create_from_oauth(stub_omniauth_new_user)
 
     expect(u.uid).to eq('9999')
-    expect(u.nickname).to eq('Jdog')
     expect(u.token).to eq('1111')
     expect(u.uid).to_not eq(user.uid)
   end

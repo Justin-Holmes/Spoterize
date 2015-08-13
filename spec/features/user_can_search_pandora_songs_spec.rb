@@ -3,7 +3,7 @@ require 'rails_helper'
 describe 'user can search pandora songs', type: :feature do
   include Capybara::DSL
 
-  let(:user) { User.create(uid: '123456', nickname: 'Jdog', token: '1111') }
+  let(:user) { User.create(uid: '123456', token: '1111') }
 
   before(:each) do
     Capybara.app = Spoterize::Application

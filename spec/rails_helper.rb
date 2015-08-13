@@ -21,9 +21,6 @@ def stub_omniauth_user
   OmniAuth.config.mock_auth[:spotify] = OmniAuth::AuthHash.new({
       provider: 'spotify',
       uid: '123456',
-      info: {
-        nickname: 'Jdog'
-      },
       credentials: {
         token: '1111'
       }
@@ -35,9 +32,6 @@ def stub_omniauth_new_user
   OmniAuth.config.mock_auth[:spotify] = OmniAuth::AuthHash.new({
       provider: 'spotify',
       uid: '9999',
-      info: {
-        nickname: 'Jdog'
-      },
       credentials: {
         token: '1111'
       }

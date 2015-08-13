@@ -541,4 +541,10 @@ body {
   margin: 0;
 }
 
+.delete-song {
+  display: none;
+}
 
+tr.like:hover .delete-song {
+  display:block;
+}

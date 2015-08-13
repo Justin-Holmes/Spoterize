@@ -34,4 +34,9 @@ class User < ActiveRecord::Base
   def likes
     JSON.parse(Rails.cache.read("user:#{id}:working_playlist"))
   end
+
+  def delete_like(index)
+    new_likes = likes - [likes.delete_at(index)]
+    Rails.cache.write("user:#{id}:working_playlist", new_likes.to_json)
+  end
 end
